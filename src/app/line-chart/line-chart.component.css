@@ -1,51 +1,38 @@
-button {
-  background: yellow;
-  border: 2px solid blue;
-  font-weight: 700;
-  padding: 5px 5px 5px 5px;
+body {
+  background-color: #F1F3F3
 }
 
-label {
-  font-size: 1.1em;
-  font-weight: 600;
+.axis {
+  font: 10px sans-serif;
 }
 
-.chart-container {
-  margin-left: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  display: inline-block;
-  width: 95%;
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #D4D8DA;
+  stroke-width: 2px;
+  shape-rendering: crispEdges;
 }
 
-.chart-options {
-  margin-left: 5px;
-  margin-right: 10px;
+.line {
+  fill: none;
+  stroke: #6F257F;
+  stroke-width: 5px;
 }
 
-.chart-card {
-  margin-top: 5px;
-  margin-bottom: 5px;
+.overlay {
+  fill: none;
+  pointer-events: all;
 }
 
-svg {
-  width: 95%;
+.focus circle {
+  fill: #F1F3F3;
+  stroke: #6F257F;
+  stroke-width: 5px;
 }
 
-@media (min-height: 500px) {
-  svg {
-    height: 400px;
-  }
-}
-
-@media (min-height: 750px) {
-  svg {
-    height: 500px;
-  }
-}
-
-@media (min-height: 1000px) {
-  svg {
-    height: 800px;
-  }
+.hover-line {
+  stroke: #6F257F;
+  stroke-width: 2px;
+  stroke-dasharray: 3, 3;
 }
