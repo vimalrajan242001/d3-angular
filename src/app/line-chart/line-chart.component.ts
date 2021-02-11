@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import * as d3 from 'd3';
+import * as d3 from 'd3'
 
 @Component({
   selector: 'app-line-chart',
@@ -80,7 +79,7 @@ private createSvg(): void {
         .attr('height', this.height)
         .on('mouseover', mouseover)
         .on('mousemove',()=>{
-           var x0 = x.invert(d3.mouse(d3.event.currentTarget)[0]);
+           var x0 = x.invert(d3.pointer(event)[0]);
           var i = bisect(data, x0, 1);
           var selectedData = data[i]
           focus
@@ -125,9 +124,8 @@ private createSvg(): void {
   ngOnInit(): void {
     this.createSvg();
     
-    d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_IC.csv",
-    (data)=> {return this.drawBars(data)}) 
-  
+    d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_IC.csv").then((data:any) => this.drawBars(data));  
+
   }
 
 }
